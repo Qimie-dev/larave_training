@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
+
+            $table->string('name');
+            $table->string('location')->nullable();
+            $table->unsignedInteger('capacity')->default(1);
+            $table->text('facilities')->nullable();
+            $table->boolean('is_active')->default(true);
+
             $table->timestamps();
         });
     }
